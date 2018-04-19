@@ -1,4 +1,6 @@
-require "ruboty/yasumimasu/version"
+# frozen_string_literal: true
+
+require 'ruboty/yasumimasu/version'
 
 module Ruboty
   module Yasumimasu
