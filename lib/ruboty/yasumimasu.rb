@@ -1,7 +1,3 @@
-require "ruboty/yasumimasu/version"
+# frozen_string_literal: true
 
-module Ruboty
-  module Yasumimasu
-    # Your code goes here...
-  end
-end
+require 'ruboty/yasumimasu/version'
