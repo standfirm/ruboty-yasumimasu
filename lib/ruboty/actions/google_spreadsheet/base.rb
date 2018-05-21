@@ -58,7 +58,7 @@ module Ruboty
         end
 
         def dates
-          @dates = [message[:start_date], message[:end_date]].compact
+          @dates = [message[:start_date], message[:end_date]].compact.uniq
         end
 
         def date(date)
