@@ -4,7 +4,7 @@ module Ruboty
   module Handlers
     class Yasumimasu < Base
       on(
-        /day off (?<key>\S+) (?<start_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})[ ]?(?<end_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})[ ]?(?<note>\S*)/i,
+        %r(day off (?<key>\S+) (?<start_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})[ ]?(?<end_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})[ ]?(?<note>\S*)),
         name: 'day_off',
         description: 'Write day off'
       )
