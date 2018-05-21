@@ -10,12 +10,6 @@ module Ruboty
       )
 
       def day_off(message)
-        puts 'day off'
-        puts message[:key]
-        puts message[:start_date]
-        puts message[:end_date]
-        puts message[:note]
-
         Ruboty::Actions::GoogleSpreadsheet::DayOff.new(message).call
         Ruboty::Actions::GoogleCalendar::DayOff.new(message).call
       end
@@ -27,12 +21,6 @@ module Ruboty
       )
 
       def morning_off(message)
-        puts 'morning off'
-        puts message[:key]
-        puts message[:start_date]
-        puts message[:end_date]
-        puts message[:note]
-
         Ruboty::Actions::GoogleSpreadsheet::MorningOff.new(message).call
         Ruboty::Actions::GoogleCalendar::MorningOff.new(message).call
       end
@@ -44,12 +32,6 @@ module Ruboty
       )
 
       def afternoon_off(message)
-        puts 'afternoon off'
-        puts message[:key]
-        puts message[:start_date]
-        puts message[:end_date]
-        puts message[:note]
-
         Ruboty::Actions::GoogleSpreadsheet::AfternoonOff.new(message).call
         Ruboty::Actions::GoogleCalendar::AfternoonOff.new(message).call
       end

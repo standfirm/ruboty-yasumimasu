@@ -9,7 +9,6 @@ module Ruboty
         end
 
         def call
-          puts '#call'
           message.reply "以下の内容で休暇連絡を受け付けました。\n```\n#{row}\n```"
         end
 

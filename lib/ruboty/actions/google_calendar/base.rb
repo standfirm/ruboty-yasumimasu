@@ -7,7 +7,6 @@ module Ruboty
         end
 
         def call
-          puts '#call'
           create_event
           message.reply 'カレンダーに予定を追加しました。'
         end
