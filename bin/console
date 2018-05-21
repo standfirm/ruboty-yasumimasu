@@ -4,8 +4,23 @@
 require 'bundler/setup'
 require 'ruboty/yasumimasu'
 
-# You can add fixtures and/or initialization code here to make experimenting
-# with your gem easier. You can also use a different console, if you like.
+def spreadsheet_client
+  @spreadsheet_client ||= Ruboty::GoogleSpreadsheet::Client.new(
+    client_id: ENV['GOOGLE_CLIENT_ID'],
+    client_secret: ENV['GOOGLE_CLIENT_SECRET'],
+    redirect_uri: ENV['GOOGLE_REDIRECT_URI'],
+    refresh_token: ENV['GOOGLE_REFRESH_TOKEN']
+  )
+end
+
+def calendar_client
+  @calendar_client ||= Ruboty::GoogleCalendar::Client.new(
+    client_id: ENV['GOOGLE_CLIENT_ID'],
+    client_secret: ENV['GOOGLE_CLIENT_SECRET'],
+    redirect_uri: ENV['GOOGLE_REDIRECT_URI'],
+    refresh_token: ENV['GOOGLE_REFRESH_TOKEN']
+  )
+end
 
 require 'pry'
 Pry.start
