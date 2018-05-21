@@ -28,7 +28,7 @@ module Ruboty
         ).data
       end
 
-      def create_event(calendar_id: nil, start_date: nil, end_date: nil)
+      def create_event(calendar_id: nil, summary: nil, start_date: nil, end_date: nil)
         return unless calendar_id
         return unless start_date
 
@@ -45,7 +45,7 @@ module Ruboty
             calendarId: calendar_id
           },
           body: JSON.dump(
-            summary: '休みますbotテスト',
+            summary: summary || '休暇',
             start: {
               date: start_date.iso8601,
               time_zone: 'Japan'

@@ -21,9 +21,14 @@ module Ruboty
         def create_event
           client.create_event(
             calendar_id: ENV['GOOGLE_CALENDAR_ID'],
+            summary: "#{message.from_name}#{holiday_type}",
             start_date: message[:start_date],
             end_date: message[:end_date]
           )
+        end
+
+        def holiday_type
+          '休み'
         end
 
         def client

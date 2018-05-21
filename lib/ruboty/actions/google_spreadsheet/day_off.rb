@@ -41,8 +41,8 @@ module Ruboty
 
         def row
           dates.size.times do |index|
-            data[num_rows + 1, 1] = message.from_name.to_s
-            data[num_rows, 2] = dates[index].strftime('%Y/%m/%d')
+            data[num_rows + 1, 1] = message.from_name
+            data[num_rows, 2] = date(dates[index])
             data[num_rows, 3] = holiday_type
             data[num_rows, 4] = note
           end
@@ -55,11 +55,11 @@ module Ruboty
         end
 
         def dates
-          @dates = [date(message[:start_date]), date(message[:end_date])].compact
+          @dates = [message[:start_date], message[:end_date]].compact
         end
 
         def date(date)
-          Date.parse(date)
+          Date.parse(date).strftime('%Y/%m/%d')
         end
 
         def holiday_type
