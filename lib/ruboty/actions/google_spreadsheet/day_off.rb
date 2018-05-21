@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'date'
 
 module Ruboty
@@ -41,13 +39,19 @@ module Ruboty
 
         def row
           dates.size.times do |index|
-            data[num_rows + 1, 1] = message.from_name
-            data[num_rows, 2] = date(dates[index])
-            data[num_rows, 3] = holiday_type
-            data[num_rows, 4] = note
+            row_data(index)
           end
           data.synchronize
           data.rows[-1 * dates.size..-1].map { |row| row.join(', ') }.join("\n")
+        end
+
+        def row_data(index)
+          data[num_rows + 1, 1] = 'reserved'
+          row_data = [message.from_name, date(dates[index]), holiday_type, note]
+
+          row_data.each_with_index do |elm, idx|
+            data[num_rows, idx + 1] = elm
+          end
         end
 
         def num_rows
