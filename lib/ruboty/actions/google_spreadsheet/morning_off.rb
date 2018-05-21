@@ -3,11 +3,11 @@ require 'ruboty/actions/google_spreadsheet/base'
 module Ruboty
   module Actions
     module GoogleSpreadsheet
-      class DayOff < Base
+      class MorningOff < Base
         private
 
         def holiday_type
-          '全休'
+          '午前休'
         end
       end
     end

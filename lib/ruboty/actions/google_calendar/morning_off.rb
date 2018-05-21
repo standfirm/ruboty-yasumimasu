@@ -3,11 +3,11 @@ require 'ruboty/actions/google_calendar/base'
 module Ruboty
   module Actions
     module GoogleCalendar
-      class DayOff < Base
+      class MorningOff < Base
         private
 
         def holiday_type
-          '休み'
+          '午前休'
         end
       end
     end
