@@ -4,6 +4,7 @@ require 'google/api_client'
 require 'google/api_client/auth/installed_app'
 require 'google/api_client/client_secrets'
 require 'google_drive'
+require 'open-uri'
 
 require 'ruboty/actions/google_calendar/afternoon_off'
 require 'ruboty/actions/google_calendar/base'

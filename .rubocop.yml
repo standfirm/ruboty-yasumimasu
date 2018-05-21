@@ -7,6 +7,9 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 30
 
+Security/Open:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
 
