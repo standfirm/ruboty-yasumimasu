@@ -46,7 +46,7 @@ module Ruboty
 
         def row_data(index)
           data[num_rows + 1, 1] = 'reserved'
-          row_data = [message.from_name, date(dates[index]), holiday_type, note]
+          row_data = [message.from_name, dates[index], holiday_type, note]
 
           row_data.each_with_index do |elm, idx|
             data[num_rows, idx + 1] = elm
@@ -58,11 +58,9 @@ module Ruboty
         end
 
         def dates
-          @dates = [message[:start_date], message[:end_date]].compact.uniq
-        end
-
-        def date(date)
-          Date.parse(date).strftime('%Y/%m/%d')
+          @dates = (Date.parse(message[:start_date])..Date.parse(message[:end_date])).map do |date|
+            date.strftime('%Y/%m/%d')
+          end
         end
 
         def holiday_type
