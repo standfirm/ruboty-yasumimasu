@@ -18,7 +18,7 @@ module Ruboty
         def create_event
           client.create_event(
             calendar_id: ENV['GOOGLE_CALENDAR_ID'],
-            summary: "#{message.from_name}#{holiday_type}",
+            summary: "#{message.from_name}#{holiday_type}: #{message[:note]}",
             start_date: message[:start_date],
             end_date: message[:end_date]
           )
