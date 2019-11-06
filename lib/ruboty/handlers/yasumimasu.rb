@@ -4,7 +4,7 @@ module Ruboty
   module Handlers
     class Yasumimasu < Base
       on(
-        %r(day off (?<key>\S+) (?<start_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})[ ]?(?<end_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})[ ]?(?<note>\S*)),
+        %r(day off (?<key>\S+) (?<start_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})\s*(?<end_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})\s*(?<note>\S*)),
         name: 'day_off',
         description: 'Write day off'
       )
@@ -16,7 +16,7 @@ module Ruboty
       end
 
       on(
-        %r(morning off (?<key>\S+) (?<start_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})[ ]?(?<end_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})[ ]?(?<note>\S*)),
+        %r(morning off (?<key>\S+) (?<start_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})\s*(?<end_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})\s*(?<note>\S*)),
         name: 'morning_off',
         description: 'Write morning off'
       )
@@ -28,7 +28,7 @@ module Ruboty
       end
 
       on(
-        %r(afternoon off (?<key>\S+) (?<start_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})[ ]?(?<end_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})[ ]?(?<note>\S*)),
+        %r(afternoon off (?<key>\S+) (?<start_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})\s*(?<end_date>\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})\s*(?<note>\S*)),
         name: 'afternoon_off',
         description: 'Write afternoon off'
       )
