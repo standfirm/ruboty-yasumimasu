@@ -54,7 +54,7 @@ module Ruboty
       end
 
       def api_channels_list
-        "https://slack.com/api/channels.list?token=#{ENV['RUBOTY_YASUMIMASU_SLACK_TOKEN']}"
+        "https://slack.com/api/conversations.list?token=#{ENV['RUBOTY_YASUMIMASU_SLACK_TOKEN']}"
       end
     end
   end
